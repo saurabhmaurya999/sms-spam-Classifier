@@ -1,0 +1,5 @@
+Flask==3.1.2
+nltk==3.9.4
+numpy==2.4.1
+scikit-learn==1.8.0
+python-3.11.9
