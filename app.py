@@ -4,22 +4,22 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-# Download required NLTK resources
+
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 
-# Initialize Flask app
+
 app = Flask(__name__)
 
-# Load vectorizer and model
+
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
-# Stemmer object
+
 ps = PorterStemmer()
 
 
-# Text preprocessing function
+# text preprocessing 
 def transform_text(text):
 
     # 1. Lowercase
@@ -76,5 +76,5 @@ def home():
 
 
 # Run application
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
